@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<style type="text/css">
+	html,body{height:100%;overflow:hidden}
+</style>
+<body>	
+<canvas id="canvas">请使用高版本浏览器，IE8以及一下不支持canvas</canvas>
+
+</body>
+</html>
+<script>
+//	var width,height,
+//canvas = document.getElementById("canvas");
+//canvas.width = width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+//canvas.height = height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+//var ctx = canvas.getContext('2d');
+// var num = Math.ceil(width / 10);
+// var y = Array(num).join(0).split('');
+// var draw = function() {
+//      ctx.fillStyle = 'rgba(0,0,0,.05)'; //核心代码，创建黑色背景，透明度为0.05的填充色。
+//      ctx.fillRect(0, 0, width, height);
+//      ctx.fillStyle = '#0f0'; //设置了字体颜色为绿色
+//      ctx.font = '10px Microsoft YaHei';//设置字体大小与family
+//      for(i = 0; i < num; i++) {
+//          var x = (i * 10) + 10;
+//          text = String.fromCharCode(65 + Math.random() * 62);
+//          var y1 = y[i];
+//          ctx.fillText(text, x, y1);
+//          if(y1 > Math.random() * 10 * height) {
+//              y[i] = 0;
+//          } else {
+//              y[i] = parseInt(y[i]) + 10;
+//          }
+//      }
+//  };(function(){
+//      setInterval(draw, 100);
+//  })();
+//  $(document).ready(function() {
+//      var s = window.screen;
+//      var width = q.width = s.width;
+//      var height = q.height;
+//      var yPositions = Array(300).join(0).split('');
+//      var ctx = q.getContext('2d');
+//
+//      var draw = function() {
+//          ctx.fillStyle = 'rgba(0,0,0,.05)';
+//          ctx.fillRect(0, 0, width, height);
+//          ctx.fillStyle = 'red';
+//          ctx.font = '10pt Georgia';
+//          yPositions.map(function(y, index) {
+//              text = String.fromCharCode(1e2 + Math.random() * 33);
+//              x = (index * 10) + 10;
+//              q.getContext('2d').fillText(text, x, y);
+//              if(y > Math.random() * 1e4) {
+//                  yPositions[index] = 0;
+//              } else {
+//                  yPositions[index] = y + 10;
+//              }
+//          });
+//      };
+//      RunMatrix();
+//
+//      function RunMatrix() {
+//          Game_Interval = setInterval(draw, 1000);
+//
+//      }
+//  });
+
+
+window.onload = function() {
+  var width,height,
+  canvas = document.getElementById("canvas");
+  canvas.width = width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  canvas.height = height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  var ctx = canvas.getContext('2d');
+  var num = Math.ceil(width / 10);
+  var y = Array(num).join(0).split('');
+  var draw = function() {
+        ctx.fillStyle = 'rgba(0,0,0,.05)'; //核心代码，创建黑色背景，透明度为0.05的填充色。
+        ctx.fillRect(0, 0, width, height);
+        ctx.fillStyle = '#0f0'; //设置了字体颜色为绿色
+        ctx.font = '10px Microsoft YaHei';//设置字体大小与family
+        for(i = 0; i < num; i++) {
+            var x = (i * 10) + 10;
+            text = String.fromCharCode(65 + Math.random() * 62);
+            var y1 = y[i];
+            ctx.fillText(text, x, y1);
+            if(y1 > Math.random() * 10 * height) {
+                y[i] = 0;
+            } else {
+                y[i] = parseInt(y[i]) + 10;
+            }
+        }
+    }
+
+    ;(function(){
+        setInterval(draw, 100);
+    })();
+
+}
+</script>
+
